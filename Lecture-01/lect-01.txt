@@ -1,0 +1,49 @@
+nodejs ==> runtime enviroment (not library or framework)
+how it is made? v8 engine+c++ code 
+now we can use it outside of browser also 
+
+download node how to check if it is downloaded or not?
+open terminal-->node --version npm --version 
+ctrl+D -->terminate the terminal (come out of that terminal)
+
+key difference between js and node js 
+1.can run outside of js 
+2.document is not present in node but other functionalities it have 
+3.don't have fetch etc.
+#setTimeOut can run 
+
+how to run node js in termianl in vscode?
+node index.js(filename.js)
+
+Understanding the modules 
+what is module? ==> collection of code 
+
+there are 3 modules 
+1.built-in 
+2.3rd party 
+3.custom modules(our own module)
+
+#file system 
+const fs=require('fs')
+it loads the fs module which is store in fs named variable 
+
+#reading a file 
+const content =fs.redfilesync('filename.extension','utf-8')
+
+what node js does in this?
+
+it have a wrapper function which have parameters like:exports,require,module,__dirname,__filename 
+it inject all the code in this wrapper function 
+
+INTERNAL WORKING OF require(<module_name>) what it does?
+
+
+if your code doesn't work?
+check current directory and save both file content 
+
+require(<module_name>)
+1.3rd part installation
+2.built-in module
+3.throw error
+
+
