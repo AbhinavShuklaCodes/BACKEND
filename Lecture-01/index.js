@@ -1,4 +1,9 @@
-const f=require('fs')
+const http=require('http');
 
-const rd=f.readFileSync('lect-01.txt','utf-8')
-console.log(rd);
+const server=http.createServer((req,res)=>{
+    res.end("hello bhai");
+});
+server.listen(3000,()=>{
+    console.log("hello this is first server");
+    
+})
