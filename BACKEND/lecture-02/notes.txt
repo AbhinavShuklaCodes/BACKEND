@@ -1,0 +1,88 @@
+http://localhost:3000 =>"Use HTTP to connect to a server running on my own computer, at port 3000."
+
+http => Tells the browser how to communicate with the server.
+
+http://        localhost        :3000
+   ↓               ↓               ↓
+ protocol      my computer     port number
+
+const server = http.createServer((req, res) => {
+    
+});
+req → Request =>Contains information about what the client is asking for
+req.url =>tells you which URL/path the client requested.
+
+res → Response
+
+parse => Parsing means taking something complicated and breaking it into useful pieces.
+http://localhost:3000/products?id=10
+
+protocol → http
+host     → localhost
+port     → 3000
+path     → /products
+query    → id=10
+
+Why do we need parsing?
+
+Imagine this request:
+/products?id=10&category=mobile
+
+pathname → /products
+id       → 10
+category → mobile
+
+const url = new URL(req.url, `http://${req.headers.host}`);
+req.url contain =>/products?id=10
+new URL(relativeURL, baseURL) take relative parth and attach to base part 
+
+
+console.log(url.pathname);
+console.log(url.searchParams.get("id"));
+console.log(url.searchParams.get("category"));
+
+That's the power of parsing.
+
+MODULES =>breaking larger files to several other files and export import them to connect 
+As your backend grows, putting everything into one file becomes messy.
+
+CommonJS traditionally uses: require() =>import, module.exports =>export
+
+math.js file
+function add(a, b) {
+    return a + b;
+}
+
+module.exports = add;
+
+server.js file
+const add = require("./math");
+
+console.log(add(2, 3));
+
+ESM — modern JavaScript modules   uses =>export and import
+
+export default function add(a, b) {
+    return a + b;
+}
+
+import { add } from "./math.js";
+
+console.log(add(2, 3));
+
+
+
+
+PRACTICE THIS LECTURE 
+Practice 1 — Create your first server
+Practice 2 — req.url
+Practice 3 — Parse the URL
+Practice 4 — Modules
+
+CommonJS
+require()
+module.exports
+
+ESM
+import
+export
